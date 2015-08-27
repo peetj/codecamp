@@ -1,4 +1,7 @@
 var greeting = "hello";
 var name = "Pete";
 
-console.log(greeting + name);
+function printName(){
+  console.log(greeting + name);
+}
+

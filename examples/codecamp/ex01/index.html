@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="refresh" content="500">
+    <title>Codecamp - Ex 01</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="stylesheet" type="text/css" href="../common/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../common/css/skeleton.css">
+    <link rel="stylesheet" type="text/css" href="../common/css/examples.css">
+  </head>
+  <body>
+    <section class="header">
+      <h2>Ex 01 - Say Hallo, Part 1</h2>
+      <a href="../index.html">Back to Index</a>
+    </section>
+    <section class="body">
+      <h2>Description</h2>
+      <p>
+      <strong>Hi and welcome to Codecamp!</strong> You may or may not have had some experience with programming before. If not then don't panic. We will try and go at a pace that suits everyone. If you have installed Chrome and Sublime Text 3 then you are ready to go. If not then please see our instructions on <a href="../how-to-install-chrome.html">installing Chrome</a> and <a href="../how-to-install-sublime-text-3.html">installing Sublime</a>, go and do that and then come back here.
+      <br><br>
+      Right - done that? Let's write our first program! Oh and by the way, if you hadn't already realised, you should be viewing this page in Chrome!
+      <br><br>
+      The objective of this preparatory exercise is to get you familiar with the Sublime Text editor, the Chrome browser and a bit of Javascript. To program in javascript all you need is a basic text editor and a browser. Mostly any browser will do, however we will be using Chrome for the duration of the workshop.
+      <br><br>
+      We will be writing a very basic function - so you should understand that a function is some kind of action usually performed by an object. An example object would be a calculator program. The calculator can add 2 numbers together. It achieves this by passing two numbers to and calling an 'add' function.
+      <br><br>
+      Our example is slightly different. We are going to create a function that says 'Hello'. Yes believe it or not that is all it does!!! We will build on the function over the next few examples, but for now, lets just introduce the simple version!
+      </p>
+      <ol>
+        <li>Startup Sublime Text and open the file 'codecamp/ex01/main.js'. (To open a file select 'Open' from the 'File' menu). You should find the main codecamp folder on your desktop. (Click on the desktop icon in both Windows and Mac).</li>
+        <li>Type in the following code under the comment that says: <em>'Type the example below this line'</em> ensuring that you type it out <strong>exactly</strong> as shown below.</li>
+      </ol>
+      <pre><code>
+        function sayHello() {
+          /* This will print the word 'Hello' to the screen....but where ??? */
+          console.log('Hello');
+        }
+
+        sayHello();
+      </code></pre>
+      <p>
+      So what have we just done? We created a single function with the name 'sayHello'. We then added a comment. A comment is there to help our understanding of the program. It doesn't actually do anything, it is simply meant
+      to be a description of what is going on in the program. Comments can be written in 2 ways:
+        <pre><code>
+        // Like this with 2 forward slashes at the beginning of the line</li>
+
+        /* Or like this with a forward slash and asterisk at the beginning
+           and the same in reverse at the end */
+        </code></pre>
+      </p>
+      <p>
+      The next line simply prints out some text to the screen. 'console' is just an object (we will learn about objects later) that knows how to print to the screen (amongst other things). The console object has a method (or function!) called 'log' that accepts some text. In this case we have passed the text 'Hello' into the 'log' method.
+      </p>
+      <p class="info">
+      Note well the 'dot' notation that the object uses to call the 'log' method: <span class="code-inline">console.log('hello')</span>. 'console' is the object, 'log' is the method and 'hello' is the message passed to the method. Confused? - don't worry. There will be plenty of time for explaining later!
+      </p>
+      <p>
+      There is one more line of code to consider. We haven't actually called the function yet. We have only defined it which means we now possess a shiny new function that will politely say 'Hello' when called upon, however that is exactly it....we need to call upon it! We do this with the final line of code <span class="code-inline">sayHello()</span>
+      </p>
+      <p class="info">
+      One more little note. Did you notice the semi-colon (;) at the end of a couple of the lines? In Javascript semi-colons are used to separate code statements and lines.
+      </p>
+      <p>
+        Let's save the program. To do this select File -> Save or an easier way is the key combination CTRL+S on Windows or ⌘+S on Mac.
+      <p>
+      Ok, so that's the program. How do we run it? Well you may have noticed that there is also a file called 'index.html' in the same folder as main.js. In fact you are looking at this page right now in Chrome! This page actually loads and runs all of the Javascript code when you navigate to the page in your browser. You don't have to worry about how this works now as we are more concerned about seeing the results of our program - right?!
+      </p>
+      <p>
+      Since we just saved the javascript code, we are going to have to reload the index.html page. To do this use CTRL+R in Windows and ⌘+R on the Mac, or you can just hit F5 in either Windows or Mac. The page will reload and your javascript code will run. Hmm......so what actually happened?? Let's take a look.
+      </p>
+      <p>
+      This next bit, very few people know about - in fact it might be interesting to see if your parents know where to find the bit of text that we have asked the program (or rather the console!) to print. You see when you loaded the page, our program executed (ran), printed out 'Hello' somewhere on the screen and finished.
+      </p>
+      <p class="warning">
+      CHALLENGE: Ask mum or dad where they think 'Hello' is.
+      </p>
+      <p>
+      Do you give up? So the answer is that we need to open up Chrome's Developer Tools window. To do this on a Mac use the following key combo: ⌘+OPTION+I (that is 'i')<br>
+      If you are on Windows use F12<br>
+      You should see a window open up (on the bottom half of the screen) that looks something like this:
+      <br><br>
+      <img src="img/console.png" style="width:800px"/>
+      <br><br>
+      OK - you need to make sure of two things at this point. Firstly that you click on the 'console' tab, highlighted in <span style="color:red">red</span>. Secondly, that the window that just appeared is docked on the bottom of the main window as in the screenshot. If it isn't, you will need to 'play with' the icon hightlighted in <span style="color:blue">blue</span>.By clicking on the icon once and holding down the left mouse button you will see the other options for this icon. Be warned it can be a bit tricky!
+      </p>
+      <div class="summary">
+      <p>
+      <strong>So, just to recap then:</strong>
+      <ol>
+        <li>We opened up the file 'main.js' in the Sublime Text text editor</li>
+        <li>We wrote a function in javascript</li>
+        <li>We refreshed the page so that we could see the result of the changes that we made</li>
+        <li>We opened up the Chrome Developer Tools window to see the result of our program</li>
+      </ol>
+      </p>
+      </div>
+      <p>
+      Phew! We made it to the end. I hope that you have begun to understand something of the javascript programming language. In the Codecamp workshop we will be modifying this program, learning about Objects, variables, methods/functions, if...else statements and for..loops. We will also be building a 2D shoot-em-up game or at least the beginnings of one! If you want to read more about javascript, you can find plenty of resources on the web.
+      </p>
+    </section>
+
+
+    <!-- The file 'main.js' which is linked to below, is where all our javascript code lives! -->
+    <script src="main.js"></script>
+  </body>
+</html>

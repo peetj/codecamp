@@ -1,0 +1,8 @@
+section.header, section.body{
+  max-width: 800px;
+  margin:1em auto;
+}
+
+section.header h2{
+  margin-bottom: 0rem;
+}

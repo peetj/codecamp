@@ -1,0 +1,35 @@
+body {
+  background:  url(../img/javascript-logo.png) #FFCC00 top right no-repeat;
+  color: rgba(0,0,0,1);
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+  font-size: 62.5%;
+}
+
+h1 {
+  color: #CA661A;
+  font-family: 'Bangers', cursive;
+  font-size: 10em;
+  margin: 0 0 .1em 0;
+  line-height: 1;
+}
+
+h2 {
+  font-size: 4em;
+  color: #CA661A;
+  margin: 0em;
+}
+
+a {
+  font-size: 2.5em;
+  font-family: arial;
+}
+
+li {
+  padding: 3px 0;
+}
+
+section.one {
+  height: 800px;
+  padding: 20px;
+}

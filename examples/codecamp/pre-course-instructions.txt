@@ -1,0 +1,67 @@
+Dear Codecamper!
+
+Hi and welcome to Codecamp. One week to go! We are excited - I hope you are too!
+
+We hope that you are going to have fun and learn lots during the course. In order to maximise the time we have during the course we would like you to do a few small pre-course tasks. You may need Dad or Mum to help :)
+
+1. Unzip the attachment (pre-course-work.zip) to your desktop or a folder of your choice. Just make sure you know where you put it.
+
+2. Install Sublime Text 3 (Text Editor)
+
+  Sublime Text 3 is an excellent free text editor. We will be using it to write all our code. To install it follow these instructions:
+
+Go to the following URL:
+http://www.sublimetext.com/3
+
+Click on the appropriate link for your operating system (OS X, Windows or Windows 64 bit) button. If you don't know whether you have a 64-bit Windows operating system then click on:
+
+http://windows.microsoft.com/en-au/windows/32-bit-and-64-bit-windows#1TC=windows-7
+
+which will help you figure it out.
+
+Once the file is downloaded, click on it to run it.
+
+Follow the installation instructions - NB. If you get an option to 'Add to explorer context menu' then take it!
+
+To startup Sublime, goto the Start menu if you are on windows or the Applications folder if you are on Mac and start up Sublime.
+
+You then need to do a couple of things
+
+    Goto Preferences -> Color Scheme and choose LAZY
+  Goto Project -> Add Folder to Project... and choose the 'codecamp' folder that we previously copied to your PC/Mac in step 1 above.
+
+You are done! Don't worry, if you exit Sublime and relaunch it, your settings will be remembered!!
+
+
+3. Install Google Chrome. It is more than likely that you already have Chrome installed. If you have then please make sure it is updated to the most recent version. To do that, launch Chrome and goto 'Help and About' -> 'About Google Chrome.' The version should say: Version 45.0.x.x or thereabouts! If you are online then Chrome will automatically check for and install updates anyway. Once this is done You can goto step 3. If you don't have Chrome finish off the instructions below.
+
+For those who do not have Chrome installed, follow these instructions:
+
+Go to the following URL:
+
+https://www.google.com/chrome/browser/desktop/index.html
+
+Click on the 'Download Chrome' button
+
+Click on the 'Accept and Install' button.
+
+If you are on a Mac, the downloaded file will be called 'googlechrome.dmg'. Once it has downloaded, simply double-click on the file and copy the Chrome application into your 'Applications' directory.
+
+If you are on Windows the downloaded file will be called 'ChromeSetup.exe'. Once it has downloaded, simply double-click on the file and follow the instructions
+
+You are done with the Chrome install!!
+
+
+3. Goto the pre-course example which is located in codecamp/precourse/index.html and have a go at it. To launch it you will just need to double-click it. If your default browser is Chrome, it will launch in Chrome. If is does not, then launch Chrome first, goto the File menu and do File -> Open File... Navigate to the folder where you unzipped the attachment to and find codecamp/precourse/index.html.
+
+The example is designed to get you familiar with the basics of Sublime and Chrome as well as to get familiar with the look of Javascript.
+
+4. Once you have completed the tutorial, download and install an application called Piskel (http://www.piskelapp.com). This is a sprite creation application which enables you to develop graphics for your games. You can find some tutorials for piskel on YouTube (https://www.youtube.com/watch?v=wk2HDnT8Ibg,   https://www.youtube.com/watch?v=5mafQe6W364)
+We will be using Piskel in the course to create some sprites.
+
+If you have any questions before the course please email me at the above address
+
+Many Thanks
+
+Pete…
+Mob 0428 303117

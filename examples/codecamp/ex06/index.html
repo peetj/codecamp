@@ -2,23 +2,71 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="refresh" content="5">
     <title>Codecamp - Ex 06</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="shortcut icon" href="../favicon.ico">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
-    <!-- The stylesheet 'main.css' is where we keep all our styles for objects in the game -->
-    <link rel="stylesheet" href="../common/css/main.css">
+    <link rel="stylesheet" type="text/css" href="../common/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../common/css/skeleton.css">
+    <link rel="stylesheet" type="text/css" href="../common/css/examples.css">
   </head>
   <body>
-    <h1>Ex-06</h1>
-    <a href="../index.html">Back to Index</a>
-    <!-- The '<div>' element called 'gamecanvas' is our canvas onto which we will draw all our game objects -->
-    <div id="gamecanvas" style="margin:0 auto;"></div>
+    <section class="header">
+      <h2>Building a Game with Crafty JS</h2>
+      <a href="../index.html">Back to Index</a>
+    </section>
+    <section class="body">
+      <p>
+        In this lesson, we are going to learn how we could go about building a 2D Game. Generally you could take one of two approaches:
+        <ul>
+          <li>Build the entire 2D Game yourself!</li>
+          <li>Use a javascript game library/engine to build upon</li>
+        </ul>
+        Which do you think is the better way? (Hint - there is no right answer to the question!)
+      </p>
+      <p>
+        The approach that we are going to take is to use a javascript library called CraftyJS. This will make our job a lot easier though it I wouldn't call it a walk in the park! There will still be a lot to do.
+      </p>
+      <p>
+        One of the advantages of CraftyJS is that it allows you to create what it call 'entities' with 'component behaviours'. So what does all THAT mean then? You can think of an entity as an object and a component as some characteristic of an object. I can create a basic entity with CraftyJS and then it allows me to add characteristics to the object by giving it a 'component' or a set of 'components'. Lets take a look at an example. The code below is not exactly CraftyJS code but it gives you the right idea.
+      </p>
+      <pre><code>
+        /* Hey Crafty, please create me a shiny new spaceship */
+        var petesSpaceShipThingy = Crafty.e();
 
-    <!-- The file 'crafty-min.js' which is linked to below, is where all our animation code lives! -->
-    <script src="../common/js/crafty-min.js"></script>
+        /* Ok that previous space ship was terrible! It doesn't do anything. Give me another!! */
+        var petesUpgradedSpaceShip = Crafty.e('2D Collision')
+      </code></pre>
+      <p>
+        Look at the first ship that we created in the above code. The <span class="code-inline">e()</span>  method is the magic that creates the entity. However, in the first ship, we did not give it any components at all. This ship can do practically nothing!
+        <br><br>
+        In the second example however, we passed in 2 parameters to the <span class="code-inline">e()</span> function.These were '2D' and 'Collision'. This will create an object that has 2D capabilitites (for example we can get it's position as an (x, y) co-ordinate) and the ability to experience a Collision (this is useful if you want your ship to die when it gets shot or hit by some other object in the game).
+      </p>
+      <p>
+        CraftyJS gives us a whole heap of functionality that enables us to do collisions, movement with the keyboard and mouse, gravity, sprites...etc! All this simply by passing what we want to the CraftyJS Game Engine. Now you can see why using a Game Engine can make things a lot easier.
+      </p>
+      <p>
+        So, without further ado - let's make a game!
+      </p>
+
+      <div class="summary">
+        <strong>So, just to recap then:</strong>
+        <ol>
+          <li>Games can be created from scratch or they can be built upon a library</li>
+          <li>CraftyJS is one such library. You can read about it <a href="craftyjs.com">here</a></li>
+          <li>We looked at how we might create a CraftyJS Entity (read object) with component behaviour (characteristics)</li>
+        </ol>
+        </p>
+      </div>
+
+    </section>
+    <section class="footer">
+      <a href="../ex07/index.html">Goto next lesson</a>
+    </section>
+
+    <!-- The file 'main.js' which is linked to below, is where all our javascript code lives! -->
     <script src="main.js"></script>
   </body>
 </html>

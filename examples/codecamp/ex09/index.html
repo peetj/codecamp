@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="refresh" content="500">
+    <title>Codecamp - Ex 09</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="stylesheet" type="text/css" href="../common/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../common/css/skeleton.css">
+    <link rel="stylesheet" type="text/css" href="../common/css/examples.css">
+  </head>
+  <body>
+    <section class="header">
+      <h2>Crafty JS - Create a Spaceship (again)</h2>
+      <a href="../index.html">Back to Index</a>
+    </section>
+    <section class="body">
+      <p>
+        Remember when we first learned about objects we created a spaceship example object? Well this time we are going to create the real thing. The first thing to do is load the example file game.html for this lesson. After you have done this we will go through some of the code.
+      </p>
+      <p>
+        So in this example we have a moving sprite. Remember the lesson on Sprites? Take a look at the image file ship.png in the 'img' directory in the ex09 folder. In order to get this ship on the screen and moving we have to do a number of things.
+      </p>
+      <p>
+        Firstly, we have to load the image and other resources:
+      </p>
+      <pre><code>
+        /* Create an object variable defining the sprite to load */
+        var shipSpriteImages =
+        {"sprites":
+          {"img/ship.png":
+            {tile: 72, tileh: 72, map:
+              {
+                ship_start: [0, 0], ship_end: [3, 0]
+              }
+            }
+          }
+        };
+
+        /* Get Crafty to load the sound of a ship spawning */
+        Crafty.audio.add("ship-spawn", "sounds/powerup.wav");
+
+        /* Get Crafty to load the sprite and then spawn the ship */
+        Crafty.load(shipSpriteImages, spawnShip);
+      </code></pre>
+
+      <p>
+        The first line creates a variable called <span class="code-inline">shipSpriteImages</span> that defines the sprite that we are going to load. It specifies the file name, the size of a tile and the start and end reference of the sprite images. <br><br>
+        The next line loads a sound called 'powerup.wav' and assigns it to an id called 'ship-spawn'. <br><br>
+        Finally, we ask Crafty to load the sprite and call a method once loaded called <span class="code-inline">spawnShip()</span>
+      </p>
+      <p>
+        So let's have a look at what happens when the ship is spawned!
+      </p>
+      <pre><code>
+        function spawnShip() {
+            var ship =
+            Crafty.e('2D, Canvas, ship_start, SpriteAnimation, Multiway, Collision, Solid')
+              .attr({x: 364, y: 525 })
+              .reel("thrust", 1000, [[0, 0], [1, 0], [2, 0], [3, 0]])
+              .animate("thrust", -1)
+              .multiway(3, {UP_ARROW: -90, DOWN_ARROW: 90, RIGHT_ARROW: 0, LEFT_ARROW: 180 });
+
+              /* Once the ship is created and on screen, make the sound! */
+              Crafty.audio.play('ship-spawn',1,1);
+        }
+      </code></pre>
+      <p>
+        There are a few things going on here! Firstly, we create a crafty entity, passing to it all of the component behaviours we are interested in such as SpriteAnimation and Collision (detection). Then we call various methods on the entity in order to setup the ship.
+      </p>
+      <p>
+        The first method sets up the position of the ship:<br>
+        <pre><code>
+          .attr({x: 364, y: 525 })
+        </code></pre>
+      </p>
+      <p>
+        The second method sets up the details of the sprite:<br>
+        <pre><code>
+          .reel("thrust", 1000, [[0, 0], [1, 0], [2, 0], [3, 0]])
+        </code></pre>
+        This is saying animate the sprite over 1 second (1000 milliseconds) using the first, second, third and fourth image in the first row. There is only 1 row of images in this sprite so this is fairly straightforward.
+      </p>
+      <p>
+        The third method animates the sprite:<br>
+        <pre><code>
+          .animate("thrust", -1)
+        </code></pre>
+        The -1 simply tells Crafty to animate the sprite over and over ad infinitum!
+      </p>
+      <p>
+        The fourth method sets up movement with the keyboard:<br>
+        <pre><code>
+          .multiway(3, {UP_ARROW: -90, DOWN_ARROW: 90, RIGHT_ARROW: 0, LEFT_ARROW: 180 });
+        </code></pre>
+        The '3' means move the ship by 3 pixels everytime a key is pressed. The object with key mappings tells us what direction to move the ship and what key to use. Angular directions are specified, anticlockwise being negative and clockwise positive. Check out the image below.
+      </p>
+      <img src="img/circle-angles.png" alt="Angles round a circle">
+      <p class="info">
+        OBJECT RECAP: You can't go over this stuff too many times! Remember an object in javascript can be written like this: {}. The keyboard specifier above is simply an object with 4 properties: UP_ARROW, DOWN_ARROW, RIGHT_ARROW &#38; LEFT_ARROW. Each property has a value which is in fact an angle.
+      </p>
+
+      <div class="summary">
+        <strong>So, just to recap then:</strong>
+        <ol>
+          <li>We learned how to load a sprite image in order to create our ship</li>
+          <li>We learned how to load sounds</li>
+          <li>We wrote a function to create a ship and called it after loading the ship sprite</li>
+          <li>We worked out how to animate our sprite</li>
+          <li>We learnt how to add keyboard movement for an entity (our ship)</li>
+        </ol>
+        </p>
+      </div>
+      <p class="success">
+        If you have time try to vary the <span class="code-inline">spawnShip()</span> function. You could change: <br>
+        * The initial position of the ship <br>
+        * The keys used to control the ship's movement <br>
+        * The speed of the sprite animation <br>
+        * The sound played during spawning <br>
+      </p>
+    </section>
+    <section class="footer">
+      <a href="../ex10/index.html">Goto next lesson</a>
+    </section>
+
+    <!-- The file 'main.js' which is linked to below, is where all our javascript code lives! -->
+    <!-- script src="main.js"></script -->
+  </body>
+</html>

@@ -2,23 +2,121 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="refresh" content="5">
     <title>Codecamp - Ex 05</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="shortcut icon" href="../favicon.ico">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
-    <!-- The stylesheet 'main.css' is where we keep all our styles for objects in the game -->
-    <link rel="stylesheet" href="../common/css/main.css">
+    <link rel="stylesheet" type="text/css" href="../common/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../common/css/skeleton.css">
+    <link rel="stylesheet" type="text/css" href="../common/css/examples.css">
   </head>
   <body>
-    <h1>Ex-05</h1>
-    <a href="../index.html">Back to Index</a>
-    <!-- The '<div>' element called 'gamecanvas' is our canvas onto which we will draw all our game objects -->
-    <div id="gamecanvas" style="margin:0 auto;"></div>
+    <section class="header">
+      <h2>Let's create a Spaceship!</h2>
+      <a href="../index.html">Back to Index</a>
+    </section>
+    <section class="body">
+      <p>
+        So in this lesson, we are going to apply what we have learnt in order to create a spaceship object.
+      </p>
+      <p>
+        Open up ex05/index.html and take a few minutes to study the code.
+      </p>
+      <p>
+        Let's take a look at 3 things:
+        <ul>
+          <li>How to create the spaceship object</li>
+          <li>Giving the spaceship some properties</li>
+          <li>Giving the spaceship some functionality</li>
+        </ul>
+      </p>
+      <h5>Create the Ship</h5>
+      <pre><code>
+        /* Create my player object */
+        var spaceShip = {};
+      </code></pre>
+      <p>
+        A quick recap tells us that we just created a variable called 'spaceShip' and the variable is of type....what?
+        <br>
+        What kind of variable is it? Or another way of phrasing that question is: What are we storing in the variable so that we can find (access) it later?
+      </p>
+      <p class="info">
+        What can we store in a variable? Take a look below:
+        <br><br>
+        var myNum = 10;<span style="width:290px;text-align:right;display:inline-block">/* A number */</span>
+        <br><br>
+        var myStringValue ="abcdefg";<span style="width:275px;text-align:right;display:inline-block">/* A string of characters */</span>
+        <br><br>
+        var myObject = {};<span style="width:280px;text-align:right;display:inline-block">/* An object */</span>
+        <br><br>
+        var myVariableWithNothingDefinedAtAll;<span style="width:195px;text-align:right;display:inline-block">/* An undefined value */</span>
+        <br><br>
+      </p>
+      <h5>Add Properties to the Ship</h5>
+      <pre><code>
+        /* Give my ship some properties */
+        spaceShip.direction = 'right';
+        spaceShip.speed = 5; // Where 1 = slow and 10 = fast
+        spaceShip.image = 'ship.png';
+      </code></pre>
 
-    <!-- The file 'crafty-min.js' which is linked to below, is where all our animation code lives! -->
-    <script src="../common/js/crafty-min.js"></script>
+      <p class="info">
+        Remember that properties are the same things as characteristics. Until we give our spaceship some characteristics, it is really nothing of any consequence at all. In the above code, we have given it direction, speed and an image. Well we have to start somewhere!
+      </p>
+
+      <h5>Add Methods to the Ship</h5>
+      <pre><code>
+        /*Shoot a bullet*/
+        spaceShip.shoot = function(){
+          console.log('Shoot a bullet...!');
+        };
+
+        /* Move left */
+        spaceShip.moveLeft = function(){
+          console.log('Moving left...!');
+        }
+
+        /* Move right */
+        spaceShip.moveRight = function(){
+          console.log('Moving right...!');
+        }
+      </code></pre>
+
+      <p class="info">
+        This is where all the good stuff happens. Any object that you create must be able to do stuff. In the above code, we have given our ship the ability to shoot and move left or right. Obviously the methods themselves should be coded properly rather than just spit out a message to the console but again, it is a start!
+      </p>
+
+      <h5>Use the Ship</h5>
+      <p>
+        So how do we use the ship to shoot? Well, we have to call the 'shoot' method. Remember the 'dot' notation? Can anyone explain how to call the 'shoot' method in the code?
+        <br><br>
+        Amend your code in 'main.js' so that your ship will shoot and move. Can you remember how to run it in the browser and see the output? Let's do it!!!
+      </p>
+      <pre><code>
+        /* Now do some stuff with the gunship */
+        spaceShip.shoot();
+        //spaceShip.moveLeft();
+        //spaceShip.moveRight();
+      </code></pre>
+
+      <div class="summary">
+        <strong>So, just to recap then:</strong>
+        <ol>
+          <li>We looked at how we could create a spaceship object</li>
+          <li>We created the spaceship, then gave it properties and methods</li>
+          <li>We called some of these methods from an instance of a spaceship object</li>
+        </ol>
+        </p>
+      </div>
+
+    </section>
+    <section class="footer">
+      <a href="../ex06/index.html">Goto next lesson</a>
+    </section>
+
+    <!-- The file 'main.js' which is linked to below, is where all our javascript code lives! -->
     <script src="main.js"></script>
   </body>
 </html>

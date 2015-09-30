@@ -596,10 +596,15 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/peetj/GitHub/codecamp"
+		"/Users/peetj/GitHub/codecamp",
+		"/Users/peetj/GitHub/codecamp/examples",
+		"/Users/peetj/GitHub/codecamp/examples/codecamp",
+		"/Users/peetj/GitHub/codecamp/resources",
+		"/Users/peetj/GitHub/codecamp/venue"
 	],
 	"file_history":
 	[
+		"/Users/peetj/GitHub/codecamp/examples/ex-01-helloWorld.js",
 		"/Users/peetj/GitHub/livescore-mobile-client/livescorereact/index.ios.js",
 		"/Users/peetj/GitHub/livescore/Gruntfile.js",
 		"/Users/peetj/GitHub/livescore/server/routes/api.js",

@@ -2,18 +2,97 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="refresh" content="5">
     <title>Codecamp - Ex 03</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="shortcut icon" href="../favicon.ico">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
-    <!-- The stylesheet 'main.css' is where we keep all our styles for objects in the game -->
-    <link rel="stylesheet" href="../common/css/main.css">
+    <link rel="stylesheet" type="text/css" href="../common/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../common/css/skeleton.css">
+    <link rel="stylesheet" type="text/css" href="../common/css/examples.css">
   </head>
   <body>
-    <h1>Ex-03</h1>
-    <a href="../index.html">Back to Index</a>
+    <section class="header">
+      <h2>Say Hallo - Part 3 - Setting variables dynamically with parameters!</h2>
+      <a href="../index.html">Back to Index</a>
+    </section>
+    <section class="body">
+      <h2>Description</h2>
+      <p>
+      This time we are going to change our program so that is says 'Hello' to you! Firstly, open up ex03/main.js in Sublime. You can probably close all the other open files at this point. To do this just click on the 'x' in each tab at the top until only ex03/main.js remains.
+      </p>
+      <p>
+      Parameters are pieces of information that are passed into a function. In javascript you can pass as few or as many parameters as you like. The information that is passed could be anything, eg. strings, numbers, objects...etc. Let's look at a few examples:
+      </p>
+      <pre><code>
+        /*
+          This function takes in 2 numbers and adds them together returning the result.
+          Note that we haven't actually written the function body but it would be fairly
+          easy to do! If you want you can have a go!
+        */
+        function add(firstNumber, secondNumber){
+          /* TODO: Some code in here */
+        }
+
+        /* Call the function */
+        add(2, 2);
+
+        /*
+          This function is probably part of a virtual telephone because it actually calls
+          somebody through Skype. In order to do that, it needs a telephone number which is
+          what is passed into the function.
+        */
+        function callPersonOnSkype(telNumber){
+          /* Make the call */
+        }
+
+        /* Call the function */
+        callPersonOnSkype("0428 334727");
+      </code></pre>
+
+      <p>
+        In the first example, we are simply providing an 'add' function, much like that you would find on a calculator, the only difference being that you may want to add up more than 2 numbers so in that case you would have many parameters. Javascript allows us to do that easily.
+      </p>
+      <p>
+        In the second example, we have a function that invokes a Skype call. All the function needs is the person's telephone number. It can then do whatever it needs to do to call that person.
+      </p>
+      <p>
+        Are you beginning to see how parameters work? It really isn't that hard is it? Now onto our <span class="code-inline">sayHello()</span> example. We want to say hello to whomever we want. Take a look at the code in the ex03/main.js file. You can see it below also. How would you modify this code so that it printed: 'Hello Pete' to the screen? If you want a clue then read the info section below. However, I would encourage you to have a try first!
+      </p>
+      <p class="info">
+      Find the line of code that calls the sayHello() function. Is this line of code passing in the string 'Pete' to the function? What do you need to add to this line of code? Secondly, find the line of code that is supposed to print 'Hello Pete' to the screen. Is this line commented out? What do you need to do to uncomment it?
+      </p>
+      <pre><code>
+        function sayHello(passedInName) {
+          /* This will print hallo to the screen */
+          //console.log( 'Hello ' + passedInName );
+        }
+
+        /* This next line will run the 'sayHallo' function */
+        sayHello(); /**** FIX ME PLEASE !!! ****/
+      </code></pre>
+      <p>
+        Ok - so you've probably realised by now that you need to pass a message into the <span class="code-inline">sayHello()</span> function by now, otherwise it won't be saying hello to anyone! You will end up with something like this: <span class="code-inline">sayHello('Pete')</span>. Run the code by opening up Chrome Dev Tools and refreshing the page (press F5 or CTRL+R (Win) or ⌘+R (Mac)).
+      </p>
+      <div class="summary">
+        <strong>So, just to recap then:</strong>
+        <ol>
+          <li>We looked at parameters, what they are and how to use them</li>
+          <li>We modified our 'sayHello' function to accept a parameter called 'passedInName'</li>
+          <li>We modified the call to the sayHello function, passing in a name of our choice</li>
+          <li>We opened up the Chrome Developer Tools window to see the result of our program</li>
+        </ol>
+        </p>
+      </div>
+      <p>
+      In the next lesson, we will be talking about objects and functions! We might just stop and recap
+      everything we have learnt so far first though...
+      </p>
+    </section>
+    <section class="footer">
+      <a href="../ex04/index.html">Goto next lesson</a>
+    </section>
 
     <!-- The file 'main.js' which is linked to below, is where all our javascript code lives! -->
     <script src="main.js"></script>

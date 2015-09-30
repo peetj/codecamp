@@ -2,18 +2,73 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="refresh" content="500">
     <title>Codecamp - Ex 02</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="shortcut icon" href="../favicon.ico">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
-    <!-- The stylesheet 'main.css' is where we keep all our styles for objects in the game -->
-    <link rel="stylesheet" href="../common/css/main.css">
+    <link rel="stylesheet" type="text/css" href="../common/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../common/css/skeleton.css">
+    <link rel="stylesheet" type="text/css" href="../common/css/examples.css">
   </head>
   <body>
-    <h1>Ex-02</h1>
-    <a href="../index.html">Back to Index</a>
+    <section class="header">
+      <h2>Say Hallo - Part 2 - Variables</h2>
+      <a href="../index.html">Back to Index</a>
+    </section>
+    <section class="body">
+      <h2>Description</h2>
+      <p>
+      Congratulations, you made it to Part 2! In the first part if you recall we simply printed out the word 'Hello' to the screen using the <span class="code-inline">console</span> object. In this part we are going to introduce a variable.
+      </p>
+      <p>
+      Computer programs need to store and remember values so that they can use them again at a later time. They store these values in variables. In javascript we create a variable with the 'var' keyword. Here is an example:<br>
+
+      <pre><code>
+        var dob = "08-02-1970";
+      </code></pre>
+
+      The above example creates a variable called 'dob' and sets this to the value "08-02-1970" which happens to be my date of birth! Now as an example, the program may want to print out my age at some later time. It will use the 'dob' variable that it stored previously to do this.
+      </p>
+      <p>
+        Hopefully, you have a basic understanding of what a variable is at this point. A variable can store numbers, strings (a string is simply a sequence of characters in quotes like 'dob' above), objects and can have a couple of special values as well but we needn't worry about any of this at the moment. In our example below we are going to define a variable called 'name' and give it the value "Bob". Take a look at the code below.
+      </p>
+      <pre><code>
+        function sayHello() {
+          var name = "Bob";
+
+          /* This will print hallo to the screen */
+          //console.log( 'Hallo ' + name );
+        }
+
+        /* This next line will run the 'sayHallo' function */
+        sayHello();
+      </code></pre>
+      <p>
+        Open the file ex02/main.js in Sublime. At the same time open up the Chrome Developer Tools so that you can view this page and the console at the same time. Do you see any output on the console? Does it say 'Hello Bob'? Can you work out why there is no output shown? If not, go back to the javascript code in main.js in your Sublime text editor and check to see if anything is commented out that shouldn't be.
+      </p>
+      <p>
+        Fix the code and run the example again. You should see the text 'Hello Bob' on the console.
+      </p>
+      <div class="summary">
+      <p>
+      <strong>So, just to recap then:</strong>
+      <ol>
+        <li>We looked at variables, what they are and why we need them</li>
+        <li>We updated our 'sayHello' function to say hello to Bob</li>
+        <li>We refreshed the page to incorporate the changes that we made</li>
+        <li>We opened up the Chrome Developer Tools window to see the result of our program</li>
+      </ol>
+      </p>
+      </div>
+      <p>
+      In part 3 we will be saying goodbye to our <span class="code-inline">sayHello()</span> function by passing in our own value for the variable that we used in part 2. This means we will be able to say 'Hello' to whomever we want. This is surely a really useful program!
+      </p>
+    </section>
+    <section class="footer">
+      <a href="../ex03/index.html">Goto next lesson</a>
+    </section>
 
     <!-- The file 'main.js' which is linked to below, is where all our javascript code lives! -->
     <script src="main.js"></script>

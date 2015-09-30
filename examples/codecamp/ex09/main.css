@@ -1,0 +1,13 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1{
+  margin: 0px;
+  padding: 0px;
+  font-size: 80%;
+}
+
+#gamecanvas {
+  margin-top: 50px !important;
+}

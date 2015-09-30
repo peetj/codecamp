@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="refresh" content="500">
+    <title>Codecamp - Ex 10</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="stylesheet" type="text/css" href="../common/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../common/css/skeleton.css">
+    <link rel="stylesheet" type="text/css" href="../common/css/examples.css">
+  </head>
+  <body>
+    <section class="header">
+      <h2>Crafty JS - Adding Bullet Fire</h2>
+      <a href="../index.html">Back to Index</a>
+    </section>
+    <section class="body">
+      <p>
+        A spaceship is no good unless it can fire bullets - right? Well that's what this lesson is all about. Check out the example in game.html in the ex10 folder.
+      </p>
+      <p>
+        So this time, we are going to list out the steps that it takes to add a shooting capability to our ship. You can then go through the code and ponder over which bit does what! <br><br>
+        Here are the things we need to do to get bullets !!!
+      </p>
+      <ul>
+        <li>Bind the ship entity to the 'KEY_DOWN' event</li>
+        <li>If the user presses the SPACE KEY, trigger the shooting of a bullet</li>
+        <li>Before creating the bullet, set the (x, y) position of where it will be</li>
+        <li>Create a bullet entity using <span class="code-inline">Crafty.e()</span></li>
+        <li>The bullet will be a simple rectangle with position, width, height and color</li>
+        <li>Animate the bullet using the Tween component</li>
+      </ul>
+      <p>
+        Head straight to the code in main.js in the ex10 folder and try and work out which line is doing what. Please make sure you ask questions if you get stuck.
+      </p>
+      <p>
+        When you have a reasonable idea of how the bullet code works, try and modify it (see below).
+      </p>
+
+      <div class="summary">
+        <strong>So, just to recap then:</strong>
+        <ol>
+          <li>We learned how to give our ship the ability to shoot bullets</li>
+        </ol>
+        </p>
+      </div>
+      <p class="success">
+        If you have time try to modify the bullet behaviour: <br>
+        * The initial position of the bullet <br>
+        * The bullet color and size<br>
+        * How fast the bullet travels <br>
+      </p>
+    </section>
+    <section class="footer">
+      <a href="../ex11/index.html">Goto next lesson</a>
+    </section>
+
+    <!-- The file 'main.js' which is linked to below, is where all our javascript code lives! -->
+    <!-- script src="main.js"></script -->
+  </body>
+</html>

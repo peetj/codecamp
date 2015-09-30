@@ -2,23 +2,72 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="refresh" content="5">
     <title>Codecamp - Ex 07</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="shortcut icon" href="../favicon.ico">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
-    <!-- The stylesheet 'main.css' is where we keep all our styles for objects in the game -->
-    <link rel="stylesheet" href="../common/css/main.css">
+    <link rel="stylesheet" type="text/css" href="../common/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../common/css/skeleton.css">
+    <link rel="stylesheet" type="text/css" href="../common/css/examples.css">
   </head>
   <body>
-    <h1>Ex-07</h1>
-    <a href="../index.html">Back to Index</a>
-    <!-- The '<div>' element called 'gamecanvas' is our canvas onto which we will draw all our game objects -->
-    <div id="gamecanvas" style="margin:0 auto;"></div>
+    <section class="header">
+      <h2>Crafty JS - Adding a Background</h2>
+      <a href="../index.html">Back to Index</a>
+    </section>
+    <section class="body">
+      <p>
+        In this lesson, we are going to create a game stage and a background. Note that things may get a little more difficult from this point on, but remember that you don't have to understand every line of code - it takes a lot of time and learning to do that. However, just remember the basics that we have learnt thus far.
+        <br><br>
+        We will try to go over them again a few times during the making of the game. Hopefully things will start to slot into place. Programming is something that takes years to master. So don't be discouraged if you feel some things are hard to understand. Often sticking at it proves to be the key to unlocking understanding!
+      </p>
+      <p>
+        Things are going to be a little different from this point on. In each example folder you will see another html file called 'game.html'. This will contain the game that we are developing at each stage of development. So you will need to open a new tab in Chrome (CTRL+T on Windows, ⌘+T on Mac) and open the game.html file. The javascript for the game will be in main.js as before.
+      </p>
+      <p>
+        Check out the code below. This will initialise the Game engine and our game stage.
+      </p>
+      <pre><code>
+        /* Initialise variables */
+        var _screenWidth = 800;
+        var _screenHeight = 600;
 
-    <!-- The file 'crafty-min.js' which is linked to below, is where all our animation code lives! -->
-    <script src="../common/js/crafty-min.js"></script>
+        /* Initialise Game Engine */
+        Crafty.init(_screenWidth, _screenHeight, document.getElementById('gamecanvas'));
+
+        /* Load Assets */
+        Crafty.background('rgb(0,0,0)');
+      </code></pre>
+      <p>
+        Check out the 2 variables for width &#38; height. This sets the screen dimensions.
+      </p>
+      <p>
+        Next we initialise the Crafty game engine by calling a function <span class="code-inline">init()</span>. This stands for 'initialise'. Notice that we passed the width, height and something else. The something else is the HTML DIV element which has an id 'gamecanvas'. Flick to the game.html file in Sublime and you will see the element being used. Without game initialisation, we can do nothing.
+      </p>
+      <p>
+        Lastly, we set the background color using 'rgb' values. rgb means red, green &#38; blue. We give each one a number between 0 and 255 to 'make' a color. In our case we have used (0, 0, 0) which is black.
+      </p>
+      <p>
+        Use the next few minutes to play around with the dimensions of the game stage and the color of the background. Every time you make a change and save it, you will need to flick to the browser tab for game.html and refresh it to see the result of your changes.
+      </p>
+      <div class="summary">
+        <strong>So, just to recap then:</strong>
+        <ol>
+          <li>The first thing we need to do is initialise the CraftyJS game engine</li>
+          <li>To set the background we can give it a color based on the RGB system</li>
+          <li>RGB simple adds a color with some red in it, some green in it and some blue in it</li>
+        </ol>
+        </p>
+      </div>
+
+    </section>
+    <section class="footer">
+      <a href="../ex08/index.html">Goto next lesson</a>
+    </section>
+
+    <!-- The file 'main.js' which is linked to below, is where all our javascript code lives! -->
     <script src="main.js"></script>
   </body>
 </html>

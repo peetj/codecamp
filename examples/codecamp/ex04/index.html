@@ -2,23 +2,119 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="refresh" content="5">
     <title>Codecamp - Ex 04</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="shortcut icon" href="../favicon.ico">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
-    <!-- The stylesheet 'main.css' is where we keep all our styles for objects in the game -->
-    <link rel="stylesheet" href="../common/css/main.css">
+    <link rel="stylesheet" type="text/css" href="../common/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../common/css/skeleton.css">
+    <link rel="stylesheet" type="text/css" href="../common/css/examples.css">
   </head>
   <body>
-    <h1>Ex-04</h1>
-    <a href="../index.html">Back to Index</a>
-    <!-- The '<div>' element called 'gamecanvas' is our canvas onto which we will draw all our game objects -->
-    <div id="gamecanvas" style="margin:0 auto;"></div>
+    <section class="header">
+      <h2>Objects &#38; Functions (Methods)</h2>
+      <a href="../index.html">Back to Index</a>
+    </section>
+    <section class="body">
+      <h2>Description</h2>
+      <p>
+        Its all about Objects - just think about it. We spend the whole day, every day, 7 days a week interacting with/playing with/fiddling with....objects!!
+        <br><br>
+        What is an object?
+        <br><br>
+        It is critical that we grasp the concept of an object if we are going to program anything of any consequence.
+      </p>
+      <p>
+        In this lesson we are going to build a calculator. It sounds complex but actually it isn't as difficult as it sounds. Firstly we are going to discover how to create an object in javascript. Note that javascript is a very versatile language and there are several ways to create an object. Whilst we may describe the different ways to create an object, we will the concentrate on a particular one.
+        <br><br>
+        Look at the code fragment below:
+      </p>
 
-    <!-- The file 'crafty-min.js' which is linked to below, is where all our animation code lives! -->
-    <script src="../common/js/crafty-min.js"></script>
+      <pre><code>
+        /* Example 1 creates an object using the object literal notation {} */
+        var object-1 = {};
+
+        /* You can also create an object with the Object() function */
+        var object-2 = new Object();
+
+        /* Finally we see that a function in Javascript is actually an object as well */
+        var object-3 = function(){ // does nothing };
+      </code></pre>
+
+      <p>
+        So <span class="code-inline">object-3</span> doesn't really do a fat lot yet but we can give it some power! Not much I grant you but we can at least make it a bit more interesting.
+        <br><br>
+        Let's change its name to 'Fido' - if this sounds a bit strange just bear with me!
+      </p>
+      <pre><code>
+        var Fido = {};
+      </code></pre>
+      <p>
+        Ok - that's not too hard is it? We have created a variable called 'Fido'. The variable happens to be an object so it is in fact an object variable (as opposed to a numeric variable or a string variable).
+        <br><br>
+        Now, Fido can't really do anything and doesn't really have any characteristics. Do you have a pet? What kind of characteristics does your pet have eg. colour, weight, hairyness...etc! Let's give Fido some characteristics. How about colour?
+      </p>
+
+      <pre><code>
+        var Fido = {};
+
+        Fido.colour = "brown";
+      </code></pre>
+
+      <p>
+        Note the 'dot' notation. After the name of the object (Fido) we place a dot (Fido.) The property name "brown" comes after this. "brown" is a string value. Any text value is a string value and must be placed in quotes thus "". You might be thinking that Fido is a dog. I wonder why? Anyway, lets give Fido a property called "breed"
+      </p>
+
+      <pre><code>
+        var Fido = {};
+
+        Fido.colour = "brown";
+
+        Fido.breed = "spoodle";
+      </code></pre>
+
+      <p class="info">
+        When we talk about properties of objects, this is the same as saying that the object has certain characteristics. In other words, a property is a characteristic.
+      </p>
+      <p>
+        Finally, we are going to add a method to Fido because the poor thing can't actually do anything yet. We are going to add a method/function called 'talk'.
+      </p>
+
+      <pre><code>
+        var Fido = {};
+
+        Fido.colour = "brown";
+
+        Fido.breed = "spoodle";
+
+        Fido.talk = function(){ console.log("Bark! Bark!"); };
+      </code></pre>
+
+      <p>
+        So, we have a fully functioning dog! Ok maybe not fully functioning but you get the picture.
+        <br><br>
+        Open up ex04/index.html. We are going to take a look at how we might build a Calculator object
+      </p>
+
+      <div class="summary">
+        <strong>So, just to recap then:</strong>
+        <ol>
+          <li>We saw that there are different ways to create an object</li>
+          <li>We decided to concentrate on the object literal method - the squiggly braces - {}</li>
+          <li>We created a dog object called Fido with some properties and a method</li>
+          <li>We created a calculator object with an 'add' method</li>
+        </ol>
+        </p>
+      </div>
+
+    </section>
+    <section class="footer">
+      <a href="../ex05/index.html">Goto next lesson</a>
+    </section>
+
+    <!-- The file 'main.js' which is linked to below, is where all our javascript code lives! -->
     <script src="main.js"></script>
   </body>
 </html>

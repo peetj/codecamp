@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="refresh" content="5">
+    <title>Codecamp - Ex 11</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="stylesheet" type="text/css" href="../common/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../common/css/skeleton.css">
+    <link rel="stylesheet" type="text/css" href="../common/css/examples.css">
+  </head>
+  <body>
+    <section class="header">
+      <h2>Crafty JS - Adding Enemy Ship(s)</h2>
+      <a href="../index.html">Back to Index</a>
+    </section>
+    <section class="body">
+      <p>
+        We have come a long way! You can congratulate yourself by giving yourself a pat on the back or a round of applause. There are just a couple more things we need to do to make our game more feature complete. Unfortunately time does not allow us to polish it to exactly what we want, however that will give you scope to play around with it and see if you can enhance it yourself.
+      </p>
+      <p>
+        Our enemy is going to be a little sprite (surprise surprise) that resembles one of the original space invader characters. Here he is below:
+      </p>
+      <img src="img/invader.png" alt="Our enemy sprite image">
+      <p>
+        If you remember from before, the first thing we must do is load the sprite into a variable from the file system and then load it into Crafty. We do this thus:
+      </p>
+      <pre><code>
+        /*
+          Here we go again, defining a fairly complex nested object!
+          We put the nested object into a variable called <span class="code-inline">enemySpriteImages</span>
+        */
+        var enemySpriteImages =
+          {
+            "sprites":
+              {
+                "img/invader.png":
+                  {
+                    tile: 40, tileh: 40, map:
+                      {
+                        enemy_start: [0, 0], enemy_end: [6, 0]
+                      }
+                  }
+              }
+          };
+
+        /*
+          <span class="code-inline">enemySpriteImages</span> is then loaded by Crafty.
+          After loading, the <span class="code-inline">spawnEnemies</span> function is called.
+        */
+        Crafty.load(enemySpriteImages, spawnEnemies);
+      </code></pre>
+      <p>
+        Let's go through what is happening above. Our <span class="code-inline">enemySpriteImages</span> variable consists of nested object with a sprite image called 'invader.png'. This sprite has 7 tiles and each tile is 40 pixels wide and 40 pixels tall. That's it! Let's move on to the <span class="code-inline">spawnEnemies</span> function.
+      </p>
+
+      <pre><code>
+        function spawnEnemies(){
+          var spaceBetweenEnemies = 5;
+          for(var i=0; i < 10; i++){
+            spawnEnemy(i * 50) + spaceBetweenEnemies;
+          }
+        }
+      </code></pre>
+      <p>
+        First, we need to decide on how much physical space there will be between the enemy spaceships. We want 10 of them in a horizontal line advancing upon us. So we push this into a variable <span class="code-inline">spaceBetweenEnemies</span>. Secondly, we use a programming construct called a 'for loop' which allows us to repeat a task multiple times (in this case 10) and create 10 enemies. The function that creates an enemy is called <span class="code-inline">spawnEnemy</span>. To this function we must pass the 'x' co-ordinate of the enemy ship we are creating as we need to spread them out across the screen.
+      </p>
+      <p>
+        Let's look at the <span class="code-inline">spawnEnemy</span> function.
+      </p>
+
+      <pre><code>
+      function spawnEnemy(offset) {
+        var direction = 1;
+        Crafty.e('2D, Canvas, enemy_start, SpriteAnimation, Multiway, Collision')
+        .attr({x: 100 + offset , y: 64 })
+        .reel("moveEnemy", 2000, [[0, 0],[1, 0], [2, 0], [3, 0], [4, 0], [5, 0], [6, 0] ])
+        .animate("moveEnemy", -1)
+        .bind("EnterFrame", function() {
+            if (Crafty.frame() % 2 === 0) {
+                if(this.x >= 700){
+                  this.y += 43;
+                  direction = -1;
+                }
+                else if(this.x <= 99){
+                  this.y += 43;
+                  direction = 1;
+                }
+                this.x += (2 * direction);
+                if (this.x > _screenWidth) {
+                    this.destroy();
+                    return;
+                }
+            }
+        })
+      }
+      </code></pre>
+      <p>
+        Look familiar? The Crafty way of doing things should start to look familiar to you by now. We will concentrate on the 'EnterFrame' part of the function above. Obviously this gets called for every frame of animation (50 per second remember?). For every second frame we check the 'x' position of the enemy. If the enemy is greater than (or equal to) 700 pixels across the screen we change his direction and move him the other way. We do the same if he then goes too far left (x co-ordinate is <= 99 pixels). Every time we change direction we also increase the 'y' co-ordinate, moving him down the screen a bit as well.
+      </p>
+      <div class="summary">
+        <strong>So, just to recap then:</strong>
+        <ol>
+          <li>We learned how to add an enemy sprite to our game</li>
+          <li>We learned how to move our enemies across and down the screen</li>
+        </ol>
+        </p>
+      </div>
+      <p class="success">
+        If you have time try to modify the movement of our enemy: <br>
+        * You could change the speed of movement <br>
+        * You could alter the number of enemies coming at us<br>
+        * You could think about adding sound to the movement of the enemy <br>
+        * You could have additional enemy sprites to mix it up a bit <br>
+        * You could even change the sprite for your own enemy creation <br>
+      </p>
+    </section>
+    <section class="footer">
+      <a href="../ex12/index.html">Goto next lesson</a>
+    </section>
+
+    <!-- The file 'main.js' which is linked to below, is where all our javascript code lives! -->
+    <!-- script src="main.js"></script -->
+  </body>
+</html>
